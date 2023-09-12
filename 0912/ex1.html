@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성변경</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 225px;
+            border: 1px solid #000;
+            margin: auto;
+        }
+
+        .box img {
+            width: 100%;
+            height: 245px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <figure><img src="./girl.jpg" alt=""></figure>
+        <button>짱아</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        let i = 0;
+        let button = document.querySelector('button');
+        let img = document.querySelector('figure img');
+
+        button.addEventListener('click', function () {
+            i = !i
+            if (i) {
+                img.setAttribute( 'src','./boy.png' );
+                // button.textContent('짱구');
+                button.textContent='짱구'
+            }
+            else {
+                img.setAttribute( 'src', './girl.jpg' );
+                // button.textContent('짱아');
+                button.textContent='짱아'
+            }
+            
+        })
+
+        // $('button').click(function(){
+        //     if(i==0){
+        //         $('figure img').attr({'src':'./boy.png'})
+        //         $(this).text('짱구')
+        //     }
+        //     else{
+        //         $('figure img').attr({'src':'./girl.jpg'})
+        //         $(this).text('짱아')
+        //     }
+        //     i =!i
+        // })
+
+
+    </script>
+</body>
+
+</html>

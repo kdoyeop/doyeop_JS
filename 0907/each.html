@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border: 1px solid #000;
+            margin-bottom: 1rem;
+            list-style: none;
+            position: relative;
+            left: 0;
+            transition: .35s;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>lsit1</li>
+        <li>lsit2</li>
+        <li>lsit3</li>
+        <li>lsit4</li>
+        <li>lsit5</li>
+        <li>lsit6</li>
+        <li>lsit7</li>
+        <li>lsit8</li>
+        <li>lsit9</li>
+        <li>lsit10</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        // $('li').animate({'left':'90%'},1000)
+
+        // $('li').each(function (i) {
+        //     console.log(i);
+        //     $(this).delay(i * 500).animate({ 'left': '90%' }, 1000)
+        // })
+        let liElems = document.querySelectorAll('li')
+
+        liElems.forEach(function (item, i) {
+
+            setTimeout(function () {
+                item.style.left = '90%'
+            }, i * 500)
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

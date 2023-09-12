@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <style>
+        .slideContainer {
+            width: 825px;
+            height: 387px;
+            border: 1px solid #000;
+            margin: auto;
+            position: relative;
+        }
+
+        ul.menu {
+            display: flex;
+            position: absolute;
+            width: 98%;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        ul.menu li {
+            flex: 1;
+            background: #fff;
+            text-align: center;
+
+        }
+
+        ul.menu li a::after{
+            content: '';
+            width: 100%;
+            height: 3px;
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: none;
+        }
+
+        ul.menu li a{            
+            position: relative;
+            display: block;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        ul.menu li a.on::after{display: block;}
+    </style>
+</head>
+
+<body>
+    <div class="slideContainer">
+
+        <figure><img src="./images/banner1.jpg" alt=""></figure>
+
+        <ul class="menu">
+            <li><a href="./images/banner1.jpg">스페셜 이벤트</a></li>
+            <li><a href="./images/banner2.jpg">한가위 빅세일</a></li>
+            <li><a href="./images/banner3.jpg">이슈 아이템</a></li>
+            <li><a href="./images/banner4.jpg">득템 찬스</a></li>
+            <li><a href="./images/banner5.jpg">추천 라이프</a></li>
+            <li><a href="./images/banner6.jpg">제휴 이벤트</a></li>
+            <li><a href="./images/banner7.jpg">추천 이벤트</a></li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $('a').mouseenter(function(){
+            $(this).addClass('on')
+            let img=document.querySelector()
+            $('figure img').attr({'src':''})
+        })
+        $('a').mouseleave(function(){
+            $(this).removeClass('on')
+        })
+        
+    </script>
+</body>
+
+</html>
