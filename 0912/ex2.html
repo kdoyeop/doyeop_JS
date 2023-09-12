@@ -76,6 +76,16 @@
             $(this).addClass('on')
             let img=$(this).attr('href')
             $('figure img').attr('src',img)
+        })    
+        $('.menu li a').click(function(e){
+            e.preventDefault()
+        })
+
+        let img=document.querySelector('figure img')
+        let aElems=document.querySelectorAll('.menu li a')
+        
+        aElems.forEach(function(item){
+
         })
         
     </script>
