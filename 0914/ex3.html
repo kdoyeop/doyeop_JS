@@ -29,10 +29,12 @@
     <div class="popup" id="popup">
         <h2>event</h2>
         <p>20% discount</p>
-        <button class="close" onclick="document.getElementById('popup').style.display='none'">close</button>
+        <button class="close" onclick="Popup('none')">close</button>
     </div>
-    <button class="open" onclick="document.getElementById('popup').style.display='block'">event open</button>
+    <button class="open" onclick="Popup('block')">event open</button>
     <script>
+
+
         //함수 형식
         // function name(aprams){}
         //------------------------------
@@ -41,7 +43,16 @@
         // }
         // add(123,24)
         //--------------------------------
-
+        function openPopup(){
+            document.getElementById('popup').style.display='block'
+        }
+        function closePopup(){
+            document.getElementById('popup').style.display='none'
+        }
+        
+        function Popup(para){
+            document.getElementById('popup').style.display=para
+        }
     </script>
 </body>
 
