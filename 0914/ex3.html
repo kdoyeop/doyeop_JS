@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<style>
+    .popup {
+        width: 200px;
+        background: #eee;
+        border: 1px solid #000;
+        position: relative;
+        text-align: center;
+        display: none;
+    }
+
+    .none{display: none;}
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+</style>
+
+<body>
+
+    <div class="popup" id="popup">
+        <h2>event</h2>
+        <p>20% discount</p>
+        <button class="close" onclick="document.getElementById('popup').style.display='none'">close</button>
+    </div>
+    <button class="open" onclick="document.getElementById('popup').style.display='block'">event open</button>
+    <script>
+        //함수 형식
+        // function name(aprams){}
+        //------------------------------
+        // function add(num1,num2){
+        //     document.write(`${num1} + ${num2} = ${num1+num2} </br>`)
+        // }
+        // add(123,24)
+        //--------------------------------
+
+    </script>
+</body>
+
+</html>

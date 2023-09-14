@@ -71,23 +71,38 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
-        $('.menu li a').mouseenter(function(){
-            $('.menu li a').removeClass('on')
-            $(this).addClass('on')
-            let img=$(this).attr('href')
-            $('figure img').attr('src',img)
-        })    
-        $('.menu li a').click(function(e){
-            e.preventDefault()
-        })
+        // $('.menu li a').mouseenter(function(){
+        //     $('.menu li a').removeClass('on')
+        //     $(this).addClass('on')
 
-        let img=document.querySelector('figure img')
-        let aElems=document.querySelectorAll('.menu li a')
-        
-        aElems.forEach(function(item){
+        //     //속성값 가져와서 img에 저장
+        //     let img=$(this).attr('href')
+        //     //속성변경
+        //     $('figure img').attr('src',img)
+        // })    
+        // $('.menu li a').click(function(e){
+        //     e.preventDefault()
+        // })
 
-        })
+        // let img=document.querySelector('figure img')
+        // let aElems=document.querySelectorAll('.menu li a')
         
+        // aElems.forEach(function(item){
+
+        // })
+        
+
+        let menuItems=document.querySelectorAll('.menu li a')
+        menuItems.forEach(item=>{
+            item.addEventListener('mouseenter',function(e){
+                e.preventDefault()
+                menuItems.forEach(i=>i.classList.remove('on'))
+                this.classList.add('on')
+                let href=this.getAttribute('href')
+                document.querySelector('figure img').setAttribute('src',href) //속성
+            })
+            
+        })
     </script>
 </body>
 

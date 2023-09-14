@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입</title>
+</head>
+<body>
+    <script>
+        let name='제니';
+        console.log(typeof(name));
+
+        let age=20;
+        console.log(typeof(age));
+        console.log(`안녕 ${typeof(age)} and ${age}`);
+
+        let sw=true;
+        console.log(typeof(sw));
+
+        let f;
+        console.log(f);
+
+        let a=null;
+        console.log(typeof(a));
+
+        let ary=[1,2,3];
+        console.log(typeof(ary));
+
+        let obj={
+            name:'제니',
+            age:'20'
+        }
+        console.log(typeof(obj));
+
+        const fun=function greating(){ //변하는 함수는 const값으로 선언한다
+            console.log('안녕');
+        }
+
+        console.log(typeof(fun));
+    </script>
+</body>
+</html>
