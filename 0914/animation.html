@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="/reset.css">
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .main {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .line {
+            position: absolute;
+            background: #000;
+        }
+
+        .top {
+            width: 100%;
+            height: 1px;
+            top: 0;
+        }
+
+        .bottom {
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+        }
+
+        .right {
+            height: 100%;
+            width: 1px;
+            left: 0;
+        }
+
+        .left {
+            height: 100%;
+            width: 1px;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="line top"></div>
+        <div class="line right"></div>
+        <div class="line bottom"></div>
+        <div class="line left"></div>
+    </div>
+</body>
+
+</html>
