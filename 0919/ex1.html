@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <form>
+            <div class="mb-3">
+                <label for="id" class="form-label">아이디</label>
+                <input type="text" class="form-control" id="id" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="pw" class="form-label">비밀번호</label>
+                <input type="text" class="form-control" id="pw">
+            </div>
+            <button type="submit" class="btn btn-primary">전송</button>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        let 시도 = 1;
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            //id,pw inputform에 들어오는 입력값 지정
+            let id = document.getElementById('id').value
+            let pw = document.getElementById('pw').value
+            e.preventDefault()
+            console.log(id, pw);
+
+            if (시도 >= 5) {
+                alert('로그인 시도가 5번을 초과하였습니다, 비밀번호를 재설정하세요.')
+                return;
+            }
+            if (id == 'admin' && pw == '1234') {
+                alert('로그인성공')
+                시도=1;
+            }
+            else { 
+                 let 남은시도=5-시도;
+                 alert(`로그인 실패!! 남은 시도 : ${남은시도}회`)
+                 시도++;
+            }
+            clearInput()
+        })
+
+        //로그인 시도 이후에 input한 값 지워주기
+        function clearInput() {
+            document.getElementById('id').value=''
+            document.getElementById('pw').value=''
+        }
+
+    </script>
+</body>
+
+</html>
