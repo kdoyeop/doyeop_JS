@@ -1,0 +1,53 @@
+@import url(/reset.css);
+
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+header {
+    width: 160px;
+    background: #333;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+}
+
+section {
+    display: flex;
+    position: relative;
+    margin-left: 160px;
+    height: 100%;
+}
+
+article {
+    height: 100%;
+}
+
+article img {
+    vertical-align: top;
+}
+
+.btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn a {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, .7);
+}
+
+.btn a.on,
+.btn a:hover {
+    background: rgba(255, 0, 0, .7);
+}
+
+a.prev {
+    margin-right: -5px;
+}
