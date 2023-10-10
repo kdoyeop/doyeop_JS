@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splitText</title>
+    <script src="https://kit.fontawesome.com/e11d2bb361.js" crossorigin="anonymous"></script>
+    <style>
+        body{text-align: center;}
+        .stage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #000;
+        }
+        h2{
+            font-size: 30px;
+        }
+        button{font-size: 20px0;padding: 10px;cursor: pointer;margin-top: 30px;}
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <h2>Creative,</h2>
+        <h2>Collaborative,</h2>
+        <h2>Challenging,</h2>
+        <h2>Curious,</h2>
+    </div>
+
+    <div id="controller">
+        <button data-btn="control" class="play">
+          <i class="fa-solid fa-circle-play"></i>
+          Play
+        </button>
+        <button data-btn="control" class="pause">
+          <i class="fa-solid fa-circle-pause"></i>
+          Pause
+        </button>
+        <button data-btn="control" class="resume">
+          <i class="fa-solid fa-file"></i>
+          Resume
+        </button>
+        <button data-btn="control" class="reverse">
+          <i class="fa-solid fa-backward"></i>
+          Reverse
+        </button>
+        <button data-btn="control" class="restart">
+          <i class="fa-solid fa-power-off"></i>
+          Restart
+        </button>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="./splitText.js"></script>
+
+    <script>
+        gsap.to('.stage',{autoAlpha:1})
+
+        //const split=new SplitText('.stage h2',{type:'chars'}) //글자를 한글자씩 쪼개서 구분함
+        const {chars,words}=new SplitText('.stage h2')  //글자를 한글자씩 쪼개서 구분함
+        const tl=gsap.timeline({repeat:-1,yoyo:true,})
+
+        tl.from(chars,{
+            y:100,
+            opacity:0,
+            duration:1,
+            stagger:{
+                each:0.02, //나눠진 글자 각각에 딜레이
+                from:'random', //end = 끝부터, center = 가운데부터, endges = 양쪽 끝부분부터, random = 랜덤으로
+            } 
+
+        }).to(words,{
+            x:10,
+            y:gsap.utils.wrap([0,50]),
+            color:gsap.utils.wrap(['yellowgreen','crimson']),
+            stagger:{
+                each:0.02,
+            }
+        })
+
+        // const play = ()=>{
+        //     tl.play()
+        // }
+        // const pause = ()=>{
+        //     tl.pause()
+        // }
+        // const resume = ()=>{
+        //     tl.resume()
+        // }
+        // const reverse = ()=>{
+        //     tl.reverse()
+        // }
+        // const restart = ()=>{
+        //     tl.restart()
+        // }
+
+        function hasClass(target,className){
+            if(target.classList.contains(className)){
+                return true
+            }
+            if(target.parentElement){
+                return target.parentElement.classList.contains(className)
+            }
+            
+        }
+
+        document.querySelector('.controller').addEventListener('click',(e)=>{
+            if(hasClass(e.target,'play')){tl.play()}
+            if(hasClass(e.target,'pause')){tl.pause()}
+            if(hasClass(e.target,'resume')){tl.resume()}
+            if(hasClass(e.target,'reverse')){tl.reverse()}
+            if(hasClass(e.target,'restart')){tl.restart()}
+        })
+    </script>
+</body>
+
+</html>

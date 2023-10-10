@@ -1,0 +1,48 @@
+      <!-- // const sections = document.querySelectorAll('section')
+      // const navItems = document.querySelectorAll('nav li')
+      // const header = document.querySelector('header')
+      // const articles = document.querySelectorAll('article')
+
+      // document.querySelector('nav ul').addEventListener('click', function (e) {
+      //   let anchor = e.target.closest('li a')
+      //   if (anchor) {
+      //     e.preventDefault()
+      //     let href = anchor.getAttribute('href')
+      //     let secTop = document.querySelector(href).offsetTop
+      //     window.scrollTo({ top: secTop, behavior: 'smooth' })
+      //   }
+      // })
+
+      // window.addEventListener('scroll', function () {
+      //   let scrTop = window.scrollY
+      //   articles.forEach((article) => article.classList.remove('on'))
+      //   sections.forEach(function (section, i) {
+      //     let secTop = section.offsetTop
+      //     if (scrTop >= secTop - 50) {
+      //       navItems.forEach(function (navItem) {
+      //         navItem.classList.remove('on')
+      //       })
+      //       navItems[i].classList.add('on')
+      //       header.className = ''
+      //       header.classList.add('bg' + i)
+      //       section.querySelector('article').classList.add('on')
+      //     }
+      //   })
+      // })
+
+      // sections.forEach(function (section) {
+      //   section.addEventListener('wheel', function (e) {
+      //     e.preventDefault()
+      //     let delta = e.deltaY
+      //     let targetSection =
+      //       delta < 0
+      //         ? section.previousElementSibling
+      //         : section.nextElementSibling
+
+      //     if (targetSection) {
+      //       // 이전 또는 다음 섹션이 있을 경우에만 스크롤
+      //       let targetTop = targetSection.offsetTop
+      //       window.scrollTo({ top: targetTop, behavior: 'smooth' })
+      //     }
+      //   })
+      // }) -->

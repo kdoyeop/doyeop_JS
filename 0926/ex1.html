@@ -63,7 +63,7 @@
         <div class="best">
             <h2><span>에이스 침대몰 BEST 상품</span></h2>
             <ul class="flex menu">
-                <li class="border"><a href="#">1인 침대</a></li>
+                <li><a href="#" class="on">1인 침대</a></li>
                 <li><a href="#">2인 침대</a></li>
                 <li><a href="#">매트리스</a></li>
                 <li><a href="#">룸세트</a></li>
@@ -130,6 +130,31 @@
             })
             document.querySelectorAll('li')[activeIndex].classList.add('on')
         });
+
+        let tabMenus=document.querySelectorAll('.best .menu li a')
+        let tanElems=document.querySelectorAll('.tab-contents .tab')
+        console.log(tabMenus);
+        tabMenus.forEach(function(a,i){
+            //console.log(a,i);
+            a.addEventListener('click',function(e){
+                e.preventDefault()
+                tabMenus.forEach(function(link){
+                    link.classList.remove('on')
+                })
+                a.classList.add('on')
+
+                tanElems.forEach(function(tab){
+                    tab.classList.remove('on')
+                })
+                tabElems[i].classList.add('on')
+            })
+        })
+
+
+
+
+
+
     </script>
 
 </body>

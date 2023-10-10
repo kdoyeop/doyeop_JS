@@ -121,3 +121,9 @@ ul.tab li img{
     height: 216px;
     margin-left: 3px;
 }
+
+.best .menu li a.on{
+    color: rgb(26, 30, 236);
+    font-weight: bolder;
+    border-bottom: 3px solid rgb(26, 30, 236);
+}

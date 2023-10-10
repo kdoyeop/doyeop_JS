@@ -1,0 +1,94 @@
+@import url(/reset.css);
+
+a.btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(./img/visual-control.png);
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+}
+
+a.prev {
+    margin-left: -512px;
+}
+
+a.next {
+    background-position-x: -40px;
+    margin-left: 472px;
+}
+
+a.btn:hover {
+    background-position-y: bottom;
+}
+
+/* 1024 */
+ul.banner {
+    width: 965px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:99 ;
+    align-items: flex-end;
+}
+ul.banner {display: flex;
+
+}
+ul.banner li{flex:1}
+ul.banner li a{display: block; 
+background: rgba(0,0,0,.5);
+color: #fff;text-align: center;
+ 
+padding: 1.5rem;
+font-size: 12px;
+transition: .35s;
+}
+ul.banner li.on a{padding-top: 2.5rem;}
+
+
+#sect2{width: 1024px;margin:50px auto;}
+h2{text-align: center;margin-bottom: 1rem;}
+ul.best{display: flex;
+    width: 100%;
+border-top: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+margin-bottom: 1rem;
+}
+ul.best li{flex:1;text-align: center;position: relative;}
+ul.best li a{display: block;padding: 1rem}
+/* 변경------------------------------ */
+ul.best li a.on{color:#00acdc;}
+/* 변경------------------------------ */
+ul.best li a:after{position: absolute;
+content: '';
+left: 0;
+height: 3px;
+width: 100%;
+background: #00acdc;
+display: none;
+ margin-top: 13px; /*추가  */
+
+}
+.tab-contents{height: 244px;
+    border: 1px solid #000;
+    position: relative;
+}
+/* 변경------------------------------ */
+ ul.best li a.on::after {display: block;} 
+ ul.tab{display: flex;gap:1rem; 
+ position: absolute;
+ left: 0;
+ top: 0;
+ display: none;
+}
+ul.tab.on{display: flex;}
+
+
+ ul.tab li{flex:1;  }
+ ul.tab li img{width: 100%;height: 244px;
+vertical-align: top; 
+}

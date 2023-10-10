@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            max-width: 60%;
+            margin: 100px auto;
+            position: relative;
+            border: 1px solid #f00;
+        }
+
+        .slideContainer {
+            /* overflow: hidden; */
+            width: 100%;
+            border: 3px solid #000;
+            height: 19vw;
+        }
+
+        .slide img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .slideWrap {
+            position: relative;
+             top:-100%
+        }
+
+        a.arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        a.prev {
+            left: -64px;
+        }
+
+        a.next {
+            right: -64px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="slideContainer">
+            <div class="slideWrap">
+                <div class="slide"><img src="./slide1.jpg" alt=""></div>
+                <div class="slide"><img src="./slide2.jpg" alt=""></div>
+                <div class="slide"><img src="./slide3.jpg" alt=""></div>
+            </div>
+        </div>
+        <a href="#" class="arrow prev"><img src="./prev.png" alt=""></a>
+        <a href="#" class="arrow next"><img src="./next.png" alt=""></a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $('a.next').click(function(){
+        $('.slideWrap').animate({'top':'-200%'},function(){
+            $('.slide:first').appendTo('.slideWrap')
+            $('.slideWrap').css({'top':'-100%'})
+        })
+     
+      })
+      $('a.prev').click(function(){
+        $('.slideWrap').animate({'top':'0%'},function(){
+            $('.slide:last').prependTo('.slideWrap')
+            $('.slideWrap').css({'top':'-100%'})
+        })
+     
+      })
+
+    
+
+    </script>
+</body>
+
+</html>
